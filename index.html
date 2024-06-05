@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="./icons/favicon-white.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./icons/apple-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fysical fitness</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script defer src="main-script.js"></script>
+    <script defer src="app-script.js"></script>
+    <script defer
+    type="module"
+    src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script defer
+    nomodule=""
+    src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <figure class="bar">
+        <!-- <div class="guide">
+            <p>click anywhere on the map to get started</p>
+            <button class="got-it">Got it</button>
+        </div> -->
+        <div class="nav layer">
+            <img src="./icons/logo.png" alt="fssical fitness logo">
+            <button class="close-dashboard">&times;</button>
+            <form action="#" class="form bg-color">               
+                <label for="type" class="end">
+                    Type
+                    <select name="type" id="type" class="form-field select">
+                        <option value="running">Running</option>
+                        <option value="climbing">Climbing</option>
+                        <option value="jogging">Jogging</option>
+                        <option value="cycling">Cycling</option>
+                        <option value="walking">Walking</option>
+                    </select>
+                </label>
+                <div for="level" class="label">
+                    <span class="changing-label--level">Level</span>
+                    <select name="type" id="level" class="form-field select level">
+                        <option value="elite">Elite (very fast)</option>
+                        <option value="competetive">Competetive (fast)</option>
+                        <option value="moderate" selected>Moderate</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="casual">casual</option>
+                    </select>
+                    <select name="type" id="cycling-elevevation--levels" class="form-field select level">
+                        <option value="flat-terrain" selected>Flat terrain</option>
+                        <option value="rolling-hills">Rolling-hills</option>
+                        <option value="hilly-terrain">Hilly terrain</option>
+                        <option value="mountainous-terrain">Mountainous terrain</option>
+                    </select>
+                </div>
+                <label for="distance">
+                    Distance
+                    <input type="text" class="form-field distance read-only--data" name="distance" placeholder="km" id="distance">
+                </label>
+                <label for="duration" class="end">
+                    Duration
+                    <input type="text" class="form-field duration read-only--data" name="duration" placeholder="min" id="duration">
+                </label>
+                <label for="unit-measure">
+                    <span class="changing-label--unit-measure">Cadence</span>
+                    <input type="text" class="form-field unit-measure read-only--data" name="cadence" placeholder="steps/min" id="unit-measure">
+                </label>
+                <div for="submit" class="submit end label">Done
+                    <input type="submit" name="submit" id="done" class="form-field done" value="Yes">
+                    <input type="submit" name="submit" id="cancel" class="form-field cancel" value="No">
+                </div>
+            </form>
+        </div>
+        <div class="placeholder"></div>
+        <div class="body">
+            <div class="info" data-id="0" id="0" data-date='0' data-distance='0' data-location='0' data-duration='0'>
+                <div class="info-text">
+                    <span>Running on May 15 </span>
+                    <div class="features">
+                        <span class="btn-options"><ion-icon name="ellipsis-horizontal-outline" class ='dots-icon btn-options' title="my icon"></ion-icon></span>
+                       
+                        <ul class="options active">
+                            <li class="edit">Edit</li>
+                            <li class="theme"><select name="theme" id="theme" class="opt-ft">
+                                <option>Select theme</option>
+                                <option value="light-mode" class="light">Light theme</option>
+                                <option value="dark-mode" class="dark">Dark theme</option>
+                            </select></li>
+                            <li class="delete">Delete</li>
+                            <li class="delete-all">Delete all</li>
+                            <li><select name="sort" class="sort opt-ft">
+                                <option value="sort">Sort by</option>
+                                <option value="by-distance" class="sort-by--distance">distance</option>
+                                <option value="by-location" class="sort-by--location">location</option>
+                                <option value="by-duration" class="sort-by--duration">duration</option>
+                                <option value="by-date-modified" class="sort-by--date-modified">date modified</option>
+                            </select></li>
+                            <li class="view-all">View all workouts</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info-data">
+                    <span class="distance">🏃‍♂️ 2KM</span>
+                    <span class="duration">⌚ 2MIN</span>
+                    <span class="unit-measure">⚡ MIN/STEP</span>
+                    <span class="energy">👣 FEETS</span>
+                </div>
+                <div class="overflow">
+                    <span class="workout-count">112</span>
+                </div>
+            </div>
+        </div>
+        <div class="placeholder--2"></div>
+        <footer class="copy-right layer">
+            <p>&copy;Copyright project idea from mapty app by Jonas Schmedtman. Designed and developed by Mintlord Ettah &mdash; portfolio.</p>
+        </footer>
+        <!-- <button class="float-btn-dashboard" class="list"><ion-icon name="list-outline" class="list"></ion-icon></button> -->
+    </figure>
+
+    <div id="map"></div>
+</body>
+</html>
